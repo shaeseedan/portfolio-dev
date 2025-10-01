@@ -1,13 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import HeaderBar from "./components/HeaderBar";
+import Work from "./pages/Work";
+import Info from "./pages/Info";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Router>
+      <div>
+        {/* Navigation Bar */}
+        <HeaderBar />
+        <Routes>
+          <Route path="/" element={<Work />} />
+          <Route path="/info" element={<Info />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
