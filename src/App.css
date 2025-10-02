@@ -3,6 +3,22 @@
 /* Bootstrap Icons Import */
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+@utility text-h1 {
+  font-size: var(--text-h1);
+}
+
+@utility text-h2 {
+  font-size: var(--text-h2);
+}
+
+@utility text-h3 {
+  font-size: var(--text-h3);
+}
+
+@utility text-p {
+  font-size: var(--text-p);
+}
+
 /* Custom Fonts (API import @index.html) */
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
@@ -18,7 +34,7 @@
   --text-sp: 0.9rem;
 
   --color-primary: #ffffff;
-  --color-secondary: #50C878;
+  --color-secondary: #50c878;
   --color-tertiary: #868686;
 
   --gradient-text: linear-gradient(
@@ -39,18 +55,47 @@
 
 /* Default Body Styles */
 body {
-  height: 100vh;
-  overflow-y: hidden;
+  min-height: 100vh;
+  overflow-y: auto;
   overflow-x: hidden;
   background: linear-gradient(30deg, #000 40%, #3a3a3a 100%);
   background-repeat: no-repeat;
   color: #fff;
   margin: 0;
   padding: 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: #555 #000;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+::selection {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: #3a3a3a;
+  color: #fff;
 }
 
 /* Helper classes built from the @theme variables */
-.font-satoshi {
+/* .font-satoshi {
   font-family: var(--font-satoshi);
 }
 .font-cabinet {
@@ -81,4 +126,4 @@ body {
 }
 .text-tertiary {
   color: var(--color-tertiary);
-}
+} */
